@@ -46,16 +46,20 @@ void mexFunction( int nlhs, mxArray *plhs[], int nrhs, const mxArray*prhs[] ) {
 	}
 	
 	{ /* check and parse data */
-		const uint32_T scalar_dimension = 2; 					/* nr of dimensions of a 1 x 1 matrix*/
-		const mxArray* data = prhs[0];							/* data passed by MATLAB */		
-		mxArray* output;										/* data to be passed to MATLAB*/
-		const mxArray* window_size_matrix = prhs[1];			/* 1 x 1 MATLAB matrix that stores the window size*/
+		/* nr of dimensions of a 1 x 1 matrix*/
+		const uint32_T scalar_dimension = 2; 
+		/* data passed by MATLAB */					
+		const mxArray* data = prhs[0];
+		/* data to be passed to MATLAB*/									
+		mxArray* output;	
+		/* 1 x 1 MATLAB matrix that stores the window size*/									
+		const mxArray* window_size_matrix = prhs[1];
 		const uint32_T data_size = (uint32_T) mxGetN(data);		
 		int dimension_size[2];									
 		uint32_T* window_size_ptr;
 		uint32_T check_value;
-		
-		dimension_size[0] = 1;									/* 1 x data size */
+		/* 1 x data size */
+		dimension_size[0] = 1;									
 		dimension_size[1] = data_size;
 		
 				
